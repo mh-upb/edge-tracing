@@ -4,20 +4,18 @@
 
 This repository contains the C++ implementation of our general ambiguity model for binary edge images with edge tracing. The model is designed to identify and resolve ambiguities as a result of intersections, junctions, and other structures. The objective is to provide a versatile and intuitive preprocessing method for tasks such as figure-ground segmentation, object recognition, topological analysis, etc.
 
-Further details can be found in our [paper](https://arxiv.org/abs/xxxx.xxxxx). If you use the model in your research, please cite it:
+Further details can be found in our [paper](https://arxiv.org/abs/2408.01712). If you use the model in your research, please cite it:
 
 ```bibtex
-@misc{arxiv:xxxx.xxxxx,
+@misc{arxiv:2408.01712,
   author = {Markus Hennig and Marc Leineke and B{\"a}rbel Mertsching},
   title = {A General Ambiguity Model for Binary Edge Images with Edge Tracing and its Implementation},
-  doi = {10.48550/xxxx.xxxxx},
-  url = {https://arxiv.org/abs/xxxx.xxxxx},
+  doi = {10.48550/arXiv.2408.01712},
+  url = {https://arxiv.org/abs/2408.01712},
   publisher = {arXiv},
   year = {2024}
 }
 ```
-
-**Note**: The DOI/arXiv link will be updated upon publication, which is expected in the next few days.
 
 ### Modeling Concept and Examples
 
