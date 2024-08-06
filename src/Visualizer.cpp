@@ -44,11 +44,11 @@ void Visualizer::saveResultAsSVG(cv::Mat &img, const Edges &edges, const EdgeMap
 	FILE *file;
 	file = fopen("./output/tracedEdges.svg", "w");
 
-    if (!file)
-    {
-        std::cerr << "Failed to write tracedEdges.svg. Check folder structure." << std::endl;
-        return;
-    }
+	if (!file)
+	{
+		std::cerr << "Failed to write tracedEdges.svg. Check folder structure." << std::endl;
+		return;
+	}
 
 	// Setup SVG canvas
 	fprintf(file, "<svg width=\"%d\" height=\"%d\">\n", img.cols, img.rows);
@@ -198,11 +198,11 @@ void Visualizer::saveEdgeIdMapAsSVG(cv::Mat &img, const EdgeMap &edgeMap, bool s
 	FILE *file;
 	file = fopen("./output/edgeIdMap.svg", "w");
 
-    if (!file)
-    {
-        std::cerr << "Failed to write edgeIdMap.svg. Check folder structure." << std::endl;
-        return;
-    }
+	if (!file)
+	{
+		std::cerr << "Failed to write edgeIdMap.svg. Check folder structure." << std::endl;
+		return;
+	}
 
 	// Setup SVG canvas
 	fprintf(file, "<svg width=\"%d\" height=\"%d\">\n", cols, rows);
