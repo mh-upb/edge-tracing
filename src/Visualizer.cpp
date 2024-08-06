@@ -44,6 +44,12 @@ void Visualizer::saveResultAsSVG(cv::Mat &img, const Edges &edges, const EdgeMap
 	FILE *file;
 	file = fopen("./output/tracedEdges.svg", "w");
 
+    if (!file)
+    {
+        std::cerr << "Failed to write tracedEdges.svg. Check folder structure." << std::endl;
+        return;
+    }
+
 	// Setup SVG canvas
 	fprintf(file, "<svg width=\"%d\" height=\"%d\">\n", img.cols, img.rows);
 	fprintf(file, "<rect width=\"100%%\" height=\"100%%\" fill=\"black\" />\n");
@@ -192,6 +198,12 @@ void Visualizer::saveEdgeIdMapAsSVG(cv::Mat &img, const EdgeMap &edgeMap, bool s
 	FILE *file;
 	file = fopen("./output/edgeIdMap.svg", "w");
 
+    if (!file)
+    {
+        std::cerr << "Failed to write edgeIdMap.svg. Check folder structure." << std::endl;
+        return;
+    }
+
 	// Setup SVG canvas
 	fprintf(file, "<svg width=\"%d\" height=\"%d\">\n", cols, rows);
 	fprintf(file, "<rect width=\"100%%\" height=\"100%%\" fill=\"black\" />\n");
@@ -287,7 +299,14 @@ void Visualizer::saveEdgesAsBinaryImage(cv::Mat &img, const Edges &edges)
 	}
 
 	// Write the output image
-	cv::imwrite("./output/binary_edges.png", blank_image);
+	bool writeSuccess = cv::imwrite("./output/binary_edges.png", blank_image);
 
-	std::cout << "File binary_edges.png written.\n";
+	if (writeSuccess)
+	{
+		std::cout << "File binary_edges.png written.\n";
+	}
+	else
+	{
+		std::cerr << "Failed to write binary_edges.png." << std::endl;
+	}
 }
