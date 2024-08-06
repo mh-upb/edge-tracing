@@ -33,9 +33,6 @@ int main(int argc, const char *argv[])
 	EdgeProcessor edgeProcessor;
 	edgeProcessor.traceEdges(img);
 
-	// Print status information
-	edgeProcessor.printEdgeInfos(img);
-
 	// === POSTPROCESSING
 	// Example: frogfly.png - Uncomment the following lines - See /docs/examples-with-code.md for further examples
 	/*
@@ -44,7 +41,9 @@ int main(int argc, const char *argv[])
 	*/
 	// ===
 
+	// Clean up edges and print status information
 	edgeProcessor.cleanUpEdges(); // Remove empty edges from vector and adjust edgeIdMap for continuous edgeIds (optional)
+	edgeProcessor.printEdgeInfos(img);
 
 	// Get read-only references to internal edges and edgeIdMap
 	const Edges &edges = edgeProcessor.getEdges();
